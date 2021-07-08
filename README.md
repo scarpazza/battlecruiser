@@ -42,3 +42,10 @@ Key:
   
 ## Emacs configuration
 To follow.
+
+## Other resources
+* [EasyHIDListen](https://github.com/adamhb123/EasyHIDListen)
+* [sctools](https://github.com/thentenaar/sctools)
+* [sctools prebuilt binaries](https://geekhack.org/index.php?topic=17458.0)
+ 
+
