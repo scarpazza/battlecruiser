@@ -10,9 +10,10 @@
 remapblock
 ESC       EXTRA_F1
 EXTRA_F1  ESC
-EUROPE_1 BACKSLASH  # Key on the inside of the L-shaped Enter key 
-NUM_LOCK SLASH
-PAD_PLUS ENTER
+EUROPE_1  BACKSLASH  # Key on the inside of the L-shaped Enter key 
+NUM_LOCK  SLASH
+PAD_PLUS  ENTER
+EXTRA_F10 LGUI
 endblock
 
 
@@ -157,17 +158,6 @@ macroblock
     POP_ALL_META
   endmacro
 
-  macro EXTRA_F10
-    PUSH_META CLEAR_META all
-    SET_META LCTRL
-    DELAY 5
-    PRESS COMMA
-    DELAY 5
-    CLEAR_META LCTRL
-    DELAY 5
-    PRESS 9
-    POP_ALL_META
-  endmacro
 endblock
 
 # Remap F13...F24 to Ctrl-Comma,A ...
