@@ -1,6 +1,7 @@
 # emacs battlecruiser
 
-The goal of this project is the repurposing of vintage IBM M 122-key (a.k.a. "battlecruiser") keyboards for modern usage.
+## Goal
+Goal of this project is the repurposing of vintage IBM M 122-key (a.k.a. "battlecruiser") keyboards for modern usage.
 
 Specifically, I configure the keyboard for use with emacs on a remote system. I configure the extra keys to generate sequences 
 * that are easy bindable to emacs functions without conflicting with existing default key bindings, and
@@ -8,7 +9,10 @@ Specifically, I configure the keyboard for use with emacs on a remote system. I 
 
 While my specific choices aim at satisfying developers running predominantly emacs, either on a local or a remote system (connected via rdesktop, an X windows session, or both), you might be able to adapt this project easily to slightly different needs.
 
+## Deliverables
+
 The M-122 keyboard (Part No. 1395660) uses an RJ45 connector and needs an adapter (Soarer's converter) to be used in contemporary PCs.
+Soarer's converters are inexpensive and easily available on eBay and.
 
 I am posting: 
 * a Soarer's converter configuration file that remaps the keyboard to convenient keystroke sequences ([m122-emacs.sc](https://github.com/scarpazza/battlecruiser/blob/main/m122-emacs.sc)) and
@@ -43,10 +47,15 @@ Find my Soarer's adapter configuration in [m122-emacs.sc](https://github.com/sca
 I'm remapping function keys F13-F24 and *extra function keys* (i.e., the ten, pebble-colored keys to the left of the alphanumeric area, corresponding to `sctool`'s identifiers `EXTRA_F1`, `EXTRA_F2`, ... `EXTRA_F10`). I remap them mostly to sequences of two characters: the first a Control-Comma (`^,`), and the second either a digit or a letter.
 
 I remap:
-* the first extra function key to the `Esc` key (Esc would otherwise be where NumLock is normally located)
+* the first extra function key to the `Esc` key (without explicit remapping, Esc would be where NumLock is normally located in PC keyboards)
 * the last extra function key to the `Hyper` or `Windows` key 
 * the remaining 8 extra function keys to `^,`,`<digit>` for digit = {1, 2, 3, ..., 8}.
 * function keys `F13`-`F24` (i.e., the 12 keys above the traditional F1-F12 keys) to `^,`,`<letter>` for letter = {A, B, ..., L}
+* TO DO: key on the inside of the L-shaped Enter key
+
+
+The 5 ms delays you see between certain steps in my configuration file are needed for proper operation via rdesktop.
+You may be able to remove them and preserve function if you intend to operate only on a local system.
 
 ## Remapped layout
 
@@ -55,7 +64,9 @@ I remap:
 Key:
 * in white are keys that have identical function in the original keyboard
 * in green are keys whose function is changed by the Soarer's converter automatic keyboard identification, without explicit configuration remaps: for example,  the `Reset`, `Enter`, and `Field Exit` keys are remapped to `LeftControl`, `Right Control` and `Enter` by the converter.
-* in red are keys whose function I altered explicitly via a remap block or a macro in my configuration file.
+* in red are keys whose function I altered explicitly via configuration file entries.
+  
+
   
 ## Emacs configuration
 To follow.
