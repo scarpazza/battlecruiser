@@ -14,15 +14,15 @@ Photos of the restoration process are at https://imgur.com/a/aTVRmuB
 I have worked so far on two M 122 specimens: disassembling them, removing all the keycaps and key stems, washing the plastic shells, cleaning keycaps and keys in an ultrasonic cleaner, and cleaning the board assembly by hand separately.
 
 I ordered:
-* extra (original) keycaps from [https://www.clickykeyboards.com/](ClickyKeyboards), who also carries a variety of vintage repair parts for the Model M keyboards in general,
-* custom keycaps from [https://www.pckeyboard.com/page/category/Buttons](Unicomp), who make modern Model-M keyboards.
+* extra (original) keycaps from [ClickyKeyboards](https://www.clickykeyboards.com/), who also carries a variety of vintage repair parts for the Model M keyboards in general,
+* custom keycaps from [Unicomp](https://www.pckeyboard.com/page/category/Buttons), who make modern Model-M keyboards.
 
 ## Original layout
 ![Original layout](https://github.com/scarpazza/battlecruiser/blob/main/M122-original-layout.png)
 
 ## Soarer's converter configuration
 
-Find my Soarer's adapter configuration in [https://github.com/scarpazza/battlecruiser/blob/main/m122-emacs.sc](m122-emacs.sc).
+Find my Soarer's adapter configuration in [m122-emacs.sc](https://github.com/scarpazza/battlecruiser/blob/main/m122-emacs.sc).
 
 I'm remapping function keys F13-F24 and *extra function keys* (i.e., the ten, pebble-colored keys to the left of the alphanumeric area, corresponding to `sctool`'s identifiers `EXTRA_F1`, `EXTRA_F2`, ... `EXTRA_F10`). I remap them mostly to sequences of two characters: the first a Control-Comma (`^,`), and the second either a digit or a letter.
 
