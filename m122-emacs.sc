@@ -7,10 +7,10 @@
 #
 # To learn more on design decisions, see the README.md file
 
-
 remapblock
-EUROPE_1 BACKSLASH # Key on the inside of the L-shaped Enter key
-EXTRA_F1 ESC
+ESC       EXTRA_F1
+EXTRA_F1  ESC
+EUROPE_1 BACKSLASH  # Key on the inside of the L-shaped Enter key 
 NUM_LOCK SLASH
 PAD_PLUS ENTER
 endblock
@@ -18,7 +18,8 @@ endblock
 
 macroblock
   # Undo:
-  # Key on the immediate right of LShift, originally backslash. Re-mapping to emacs undo (^_)
+  # key on the immediate right of LShift, originally backslash
+  # remapping to emacs undo (^_)
   macro EUROPE_2
     PUSH_META CLEAR_META all
     SET_META LCTRL LSHIFT
@@ -27,7 +28,8 @@ macroblock
     POP_ALL_META
   endmacro
 
-  # Copy: "Rule" key, in the middle of arrow keys. Remapping to Alt-W (emacs copy).
+  # Copy - "Rule" key, in the middle of arrow keys.
+  # Remapping to Alt-W (emacs copy)
   macro LANG_4
     PUSH_META CLEAR_META all
     SET_META LALT
@@ -39,9 +41,9 @@ macroblock
     POP_ALL_META
   endmacro
 
-  # Key at the top of the keypad, originally unmarked. Normally would emit ESC. 
-  # Remapping to Control-comma 0
-  macro ESC
+  # Original Esc key (at the position traditionally used for NumLock)
+  # Remap to "Control-Comma 0"
+  macro EXTRA_F1
     PUSH_META CLEAR_META all
     SET_META LCTRL
     DELAY 5
@@ -55,8 +57,8 @@ macroblock
 
 endblock
 
-# Remap Extra F1 to ESC
-# and Extra F2 ... F10 to Ctrl-Comma,1 Ctrl-Comma,2 ... Ctrl-Comma,9
+
+# Remap Extra F2 ... F10 to Ctrl-Comma,1 Ctrl-Comma,2 ... Ctrl-Comma,9
 macroblock
 
   macro EXTRA_F2
@@ -106,7 +108,6 @@ macroblock
     PRESS 4
     POP_ALL_META
   endmacro
-
 
   macro EXTRA_F6
     PUSH_META CLEAR_META all
@@ -169,14 +170,12 @@ macroblock
   endmacro
 endblock
 
-# Second macro block:
-#
 # Remap F13...F24 to Ctrl-Comma,A ...
 # This also circumvents Microsoft Remote Desktop limitations
 # (it no longer forwards F13...F24 keys to the remote system).
 #
 # Keep separate from first macro block b/c block size limits.
-#
+
 macroblock
   macro F13
     PUSH_META CLEAR_META all
