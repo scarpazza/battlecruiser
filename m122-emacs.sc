@@ -3,26 +3,22 @@
 # Soarer's converter configuration file for IBM keyboard, Model M 122 Part Number 1395660
 # Originally shipped with the IBM InfoWindow II Terminal.
 #
-# Goal of this configuration is to make the keyboard generate easily re-bindable emacs sequences, that survive across Microsoft Remote Desktop and X-Windows servers
+# Remaps the keyboard for easily bindable emacs sequences that survive across Microsoft Remote Desktop and X-Windows sessions.
 #
-# Choices:
-# * remap the "extra function keys" (10 grey keys to the left of the alphanumeric area) 
-#   to "Control-comma <digit>" sequences, for with digit = {1,2,3,...,9,0}
-# * remap the F13-F24 function keys (the 12 keys above the traditional F1-F12 keys)
-#   to "Control-comma <letter>" sequences, for letter = {A,B,...L}
-#
-# Macro blocks are split to avoid exceeding block size limits.
-
-# Unfinished - TO DO: Esc NumLoc left in the keypad area
+# To learn more on design decisions, see the README.md file
 
 
-# Key on the inside of the L-shaped Enter key. I recapped it as a backslash.
 remapblock
-EUROPE_1 BACKSLASH
+EUROPE_1 BACKSLASH # Key on the inside of the L-shaped Enter key
+EXTRA_F1 ESC
+NUM_LOCK SLASH
+PAD_PLUS ENTER
 endblock
 
-# Undo key - key on the immediate right of LShift, originally backslash
+
 macroblock
+  # Undo:
+  # Key on the immediate right of LShift, originally backslash. Re-mapping to emacs undo (^_)
   macro EUROPE_2
     PUSH_META CLEAR_META all
     SET_META LCTRL LSHIFT
@@ -30,15 +26,40 @@ macroblock
     CLEAR_META LCTRL LSHIFT
     POP_ALL_META
   endmacro
+
+  # Copy: "Rule" key, in the middle of arrow keys. Remapping to Alt-W (emacs copy).
+  macro LANG_4
+    PUSH_META CLEAR_META all
+    SET_META LALT
+    DELAY 5
+    PRESS W
+    DELAY 5
+    CLEAR_META LALT
+    DELAY 5
+    POP_ALL_META
+  endmacro
+
+  # Key at the top of the keypad, originally unmarked. Normally would emit ESC. 
+  # Remapping to Control-comma 0
+  macro ESC
+    PUSH_META CLEAR_META all
+    SET_META LCTRL
+    DELAY 5
+    PRESS COMMA
+    DELAY 5
+    CLEAR_META LCTRL
+    DELAY 5
+    PRESS 0
+    POP_ALL_META    
+  endmacro
+
 endblock
 
-#
-# macro block:
-# Remap Extra F1 F2...F10 to Ctrl-Comma,1 Ctrl-Comma,2 ... Ctrl-Comma,0
-#
+# Remap Extra F1 to ESC
+# and Extra F2 ... F10 to Ctrl-Comma,1 Ctrl-Comma,2 ... Ctrl-Comma,9
 macroblock
 
-  macro EXTRA_F1
+  macro EXTRA_F2
     PUSH_META CLEAR_META all
     SET_META LCTRL
     DELAY 5
@@ -50,7 +71,7 @@ macroblock
     POP_ALL_META
   endmacro
 
-  macro EXTRA_F2
+  macro EXTRA_F3
     PUSH_META CLEAR_META all
     SET_META LCTRL
     DELAY 5
@@ -62,7 +83,7 @@ macroblock
     POP_ALL_META
   endmacro
 
-  macro EXTRA_F3
+  macro EXTRA_F4
     PUSH_META CLEAR_META all
     SET_META LCTRL
     DELAY 5
@@ -74,18 +95,6 @@ macroblock
     POP_ALL_META
   endmacro
 
-  macro EXTRA_F4
-    PUSH_META CLEAR_META all
-    SET_META LCTRL
-    DELAY 5
-    PRESS COMMA
-    DELAY 5
-    CLEAR_META LCTRL
-    DELAY 5
-    PRESS 4
-    POP_ALL_META
-  endmacro
-
   macro EXTRA_F5
     PUSH_META CLEAR_META all
     SET_META LCTRL
@@ -94,7 +103,7 @@ macroblock
     DELAY 5
     CLEAR_META LCTRL
     DELAY 5
-    PRESS 5
+    PRESS 4
     POP_ALL_META
   endmacro
 
@@ -107,7 +116,7 @@ macroblock
     DELAY 5
     CLEAR_META LCTRL
     DELAY 5
-    PRESS 6
+    PRESS 5
     POP_ALL_META
   endmacro
 
@@ -119,7 +128,7 @@ macroblock
     DELAY 5
     CLEAR_META LCTRL
     DELAY 5
-    PRESS 7
+    PRESS 6
     POP_ALL_META
   endmacro
 
@@ -131,7 +140,7 @@ macroblock
     DELAY 5
     CLEAR_META LCTRL
     DELAY 5
-    PRESS 8
+    PRESS 7
     POP_ALL_META
   endmacro
 
@@ -143,7 +152,7 @@ macroblock
     DELAY 5
     CLEAR_META LCTRL
     DELAY 5
-    PRESS 9
+    PRESS 8
     POP_ALL_META
   endmacro
 
@@ -155,11 +164,13 @@ macroblock
     DELAY 5
     CLEAR_META LCTRL
     DELAY 5
-    PRESS 0
+    PRESS 9
     POP_ALL_META
   endmacro
 endblock
 
+# Second macro block:
+#
 # Remap F13...F24 to Ctrl-Comma,A ...
 # This also circumvents Microsoft Remote Desktop limitations
 # (it no longer forwards F13...F24 keys to the remote system).
@@ -313,5 +324,3 @@ macroblock
     POP_ALL_META
   endmacro
 endblock
-
-
