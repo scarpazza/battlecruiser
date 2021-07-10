@@ -15,7 +15,8 @@ The M-122 keyboard (Part No. 1395660) uses an RJ45 connector and needs an adapte
 Soarer's converters are inexpensive and easily available on eBay and.
 
 I am posting: 
-* a Soarer's converter configuration file that remaps the keyboard to convenient keystroke sequences ([m122-emacs.sc](https://github.com/scarpazza/battlecruiser/blob/main/m122-emacs.sc)) and
+* a Soarer's converter configuration file that remaps the keyboard to convenient keystroke sequences 
+  ([m122-emacs.sc](https://github.com/scarpazza/battlecruiser/blob/main/m122-emacs.sc)) and
 * a `.emacs` startup file that binds those sequences to functions I find useful. 
 
 The key mappings I chose are chosen precisely to (1) be easily re-bindable from emacs and (2) survive Microsoft's rdesktop.
@@ -44,18 +45,20 @@ Notice the position of the `Enter`, `Field Exit`, `Field +` keys.
 
 Find my Soarer's adapter configuration in [m122-emacs.sc](https://github.com/scarpazza/battlecruiser/blob/main/m122-emacs.sc).
 
-I'm remapping function keys F13-F24 and *extra function keys* (i.e., the ten, pebble-colored keys to the left of the alphanumeric area, corresponding to `sctool`'s identifiers `EXTRA_F1`, `EXTRA_F2`, ... `EXTRA_F10`). I remap them mostly to sequences of two characters: the first a Control-Comma (`^,`), and the second either a digit or a letter.
+I'm remapping function keys F13-F24 and the *extra function keys* (i.e., the ten, pebble-colored keys to the left of the alphanumeric area, corresponding to `sctool`'s identifiers `EXTRA_F1`, `EXTRA_F2`, ... `EXTRA_F10`). I remap them mostly to sequences of two characters: the first a Control-Comma (`^,`), and the second either a digit or a letter.
 
 I remap:
 * the first extra function key to the `Esc` key (without explicit remapping, Esc would be where NumLock is normally located in PC keyboards)
 * the last extra function key to the `Hyper` or `Windows` key 
 * the remaining 8 extra function keys to `^,`,`<digit>` for digit = {1, 2, 3, ..., 8}.
 * function keys `F13`-`F24` (i.e., the 12 keys above the traditional F1-F12 keys) to `^,`,`<letter>` for letter = {A, B, ..., L}
-* TO DO: key on the inside of the L-shaped Enter key
+* the key on the inside of the L-shaped Enter key to a backslash, for consistency with traditional PC layouts;
+* the key right on the right of the short, left Shift key to generate the `^Z` sequence. 
+  That will be my Undo key. I'll bind `^Z` to `undo` in emacs as well.
 
-
-The 5 ms delays you see between certain steps in my configuration file are needed for proper operation via rdesktop.
+The 5 ms delays you see between certain steps in my configuration file are needed for proper operation through rdesktop.
 You may be able to remove them and preserve function if you intend to operate only on a local system.
+
 
 ## Remapped layout
 
@@ -63,13 +66,41 @@ You may be able to remove them and preserve function if you intend to operate on
   
 Key:
 * in white are keys that have identical function in the original keyboard
-* in green are keys whose function is changed by the Soarer's converter automatic keyboard identification, without explicit configuration remaps: for example,  the `Reset`, `Enter`, and `Field Exit` keys are remapped to `LeftControl`, `Right Control` and `Enter` by the converter.
+* in green are keys whose function is changed by the Soarer's converter automatic keyboard identification, without explicit configuration remaps: 
+  for example,  the `Reset`, `Enter`, and `Field Exit` keys are remapped to `LeftControl`, `Right Control` and `Enter` by the converter.
 * in red are keys whose function I altered explicitly via configuration file entries.
   
 
   
 ## Emacs configuration
-To follow.
+
+Associate any extra function key we remapped via a command similar to the following:
+
+    (global-set-key (kbd "C-, 8") 'comment-region)
+    
+This line binds emacs command `comment-region` to key EXTRA_F9 that we remapped to sequence `^,`,`8`.
+
+You can also bind Shift-modified keys to distinct emacs commands.
+
+For example, since we map Control+EXTRA_F9 to `comment-region`, it's reasonable to map Control+EXTRA_F9 to its reverse, `uncomment-region`.
+
+Contrary to intuition, this is not possible via
+
+    (global-set-key (kbd "C-S-, 8") 'uncomment-region) ; WILL NOT WORK - DO NOT USE
+    
+Rather, consider that our Soarer's macros won't clear the Shift modifier till after the first keystroke in the sequence.
+The Shift modifier remains active while the first key (`,`) is depressed, and the Shift-modified character corresponding to the `,` key is the `<` character.
+Consequently, the keyboard sends a `^<`,`8` ("Control+less than" followed by the digit 8) sequence when you press Control+Shift+EXTRA_F9.
+You can bind that sequence to `uncomment-region` via:
+
+    (global-set-key (kbd "C-< 8") 'uncomment-region)  
+
+I also dissociate Control+Z from emacs's `suspend-frame` command, which is probably them most useless and annoying key bindings in the history of humanity.
+I associate it with `undo`. Now I have an Undo key that performs consistently in emacs and in the majority of Windows applications.
+
+    (global-set-key (kbd "C-z") 'undo)
+    
+    
 
 ## Other resources
 * [EasyHIDListen](https://github.com/adamhb123/EasyHIDListen)
