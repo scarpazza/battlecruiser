@@ -5,8 +5,7 @@
 #
 # Remaps the keyboard for easily bindable emacs sequences that survive across Microsoft Remote Desktop and X-Windows sessions.
 #
-# To learn more on design decisions, see the README.md file
-
+# Decisions are discussed in README.md.
 
 remapblock
   ESC        EXTRA_F1
@@ -20,8 +19,8 @@ remapblock
   PAD_MINUS   INTERNATIONAL_9   # Rightmost column, third row  - reassign
   EXTRA_SYSRQ PAD_ASTERIX
   SCROLL_LOCK PAD_MINUS
-  NUM_LOCK   SLASH
-  PAD_PLUS   ENTER
+  NUM_LOCK    SLASH
+  PAD_PLUS    ENTER
   # Note that I neither have NUM_LOCK nor SCROLL_LOCK.
   # Don't need them. Don't want them.
 endblock
@@ -51,16 +50,20 @@ macroblock
     POP_ALL_META
   endmacro
 
-  # Undo: key on the immediate right of LShift, originally backslash
-  # remapping it to Ctrl+Z. 
+  # Key on the immediate right of LShift, originally backslash
+  # Remap to "Control-Comma X"
   macro EUROPE_2
     PUSH_META SET_META LCTRL
     DELAY 5
-    PRESS Z
-    POP_ALL_META    
+    PRESS COMMA
+    DELAY 5
+    CLEAR_META all
+    DELAY 5
+    PRESS 9
+    POP_ALL_META
   endmacro
 
-  # Copy - "Rule" key, in the middle of arrow keys.
+  # "Rule" key, in the middle of arrow keys.
   # Remap to "Control-Comma 9"
   macro LANG_4
     PUSH_META SET_META LCTRL
