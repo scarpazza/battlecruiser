@@ -7,18 +7,52 @@
 #
 # To learn more on design decisions, see the README.md file
 
+
 remapblock
-ESC        EXTRA_F1
-EXTRA_F1   ESC
-EXTRA_F10  LGUI
-EUROPE_1   BACKSLASH  # Key on the inside of the L-shaped Enter key
-NUM_LOCK   SLASH
-PAD_PLUS   ENTER
+  ESC        EXTRA_F1
+  EXTRA_F1   ESC
+  EXTRA_F10  LGUI
+  EUROPE_1   BACKSLASH  # Key on the inside of the L-shaped Enter key
+
+  # Configure the numeric pad mostly according to the traditional PC layout
+  #
+  PAD_ASTERIX INTERNATIONAL_8   # Rightmost column, second row - reassign
+  PAD_MINUS   INTERNATIONAL_9   # Rightmost column, third row  - reassign
+  EXTRA_SYSRQ PAD_ASTERIX
+  SCROLL_LOCK PAD_MINUS
+  NUM_LOCK   SLASH
+  PAD_PLUS   ENTER
+  # Note that I neither have NUM_LOCK nor SCROLL_LOCK.
+  # Don't need them. Don't want them.
 endblock
 
+
 macroblock
+
+  macro INTERNATIONAL_8   # Rightmost column, second row 
+    PUSH_META SET_META LCTRL
+    DELAY 5
+    PRESS COMMA
+    DELAY 5
+    CLEAR_META all
+    DELAY 5
+    PRESS Y
+    POP_ALL_META
+  endmacro
+
+  macro INTERNATIONAL_9   # Rightmost column, third row 
+    PUSH_META SET_META LCTRL
+    DELAY 5
+    PRESS COMMA
+    DELAY 5
+    CLEAR_META all
+    DELAY 5
+    PRESS Z
+    POP_ALL_META
+  endmacro
+
   # Undo: key on the immediate right of LShift, originally backslash
-  # remapping it to Ctrl+Z. Will reassign in emacs.
+  # remapping it to Ctrl+Z. 
   macro EUROPE_2
     PUSH_META SET_META LCTRL
     DELAY 5
