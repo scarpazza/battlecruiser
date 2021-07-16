@@ -1,13 +1,16 @@
 # emacs battlecruiser
 
 ## Goal
-Goal of this project is the repurposing of vintage IBM M 122-key (a.k.a. "battlecruiser") keyboards for modern usage.
+The goal of this project is repurposing vintage IBM M 122 (a.k.a. "battlecruiser") keyboards for modern usage.
 
-Specifically, I configure the keyboard for use with emacs on a remote system. I configure the extra keys to generate sequences 
+Specifically, I configure the keyboard for use with emacs on a remote system. 
+I configure the extra keys to generate sequences 
 * that are easy bindable to emacs functions without conflicting with existing default key bindings, and
 * survive across Microsoft Remote Desktop and an X-Windows connections (tested).
 
-While my specific choices aim at satisfying developers running predominantly emacs, either on a local or a remote system (connected via rdesktop, an X windows session, or both), you might be able to adapt this project easily to slightly different needs.
+While my choices are subjective and aim at primarily at satisfying a developer running predominantly emacs either on a local or a remote system 
+(possibly connected via rdesktop, X windows sessions, or both), you might be able to adapt this project easily to slightly different needs.
+
 
 ## Deliverables
 
@@ -17,35 +20,48 @@ Soarer's converters are inexpensive and easily available on eBay and.
 I am posting: 
 * a Soarer's converter configuration file that remaps the keyboard to convenient keystroke sequences 
   ([m122-emacs.sc](https://github.com/scarpazza/battlecruiser/blob/main/m122-emacs.sc)) and
-* emacs startup file that illustrates how to binds those sequences as desired. 
+* [sample emacs startup configuration files](https://github.com/scarpazza/dot-emacs/blob/main/.emacs.d/scarpaz-battlecruiser.el) 
+  that illustrate how to bind those sequences as desired. 
 
-The key mappings I chose are chosen precisely to (1) be easily re-bindable from emacs and (2) survive Microsoft's rdesktop.
-Specifically, recent versions of Microsoft Remote Desktop no longer relay function keys F13-F24 to the remote system.
+The key mappings I chose are chosen precisely to :
+1. be easily re-bindable from emacs and 
+2. survive Microsoft's rdesktop.; specifically, recent versions of Microsoft Remote Desktop no longer relay function keys F13-F24 to the remote system.
 
 
 ## Physical restoration
 
-New-old-stock M122 keyboards seem no longer available and if they were, their price would probably be prohibitive.
-Used M122 keyboards are available at affordable prices, especially if untested or needing restoration otherwise.
+New-old-stock, genuine IBM M122 keyboards seem no longer available and if they were, their price would probably be prohibitive.
+New M122-style keyboards are also available from Unicomp.
+Vintage, user IBM M122 keyboards are available at affordable prices, especially if untested or needing restoration otherwise.
 
-I have worked so far on two M122 specimens: disassembling them, removing all the keycaps and key stems, washing the plastic shells, cleaning keycaps and keys in an ultrasonic cleaner, and cleaning the board assembly by hand separately.
+
+I have worked so far on two M122 specimens: disassembling them, removing all the keycaps and key stems, washing the plastic shells, 
+cleaning keycaps and keys in an ultrasonic cleaner, cleaning the board assembly by hand separately, replacing the rivets with fasteners and nuts (a.k.a., *bolt mod*).
 
 Photos of the restoration process are at https://imgur.com/a/aTVRmuB
 
-You may want to order keycaps and parts:
-* extra (original) keycaps from [ClickyKeyboards](https://www.clickykeyboards.com/), who also carries a variety of vintage repair parts for the Model M keyboards in general,
-* custom keycaps from [Unicomp](https://www.pckeyboard.com/page/category/Buttons), who make modern Model-M keyboards.
+To order keycaps and parts, you might use the following vendors:
+* [ClickyKeyboards](https://www.clickykeyboards.com/) carries original, vintage keycaps and
+  a variety of vintage repair parts for the Model M keyboards in general,
+* [Unicomp](https://www.pckeyboard.com/page/category/Buttons) sells new custom keycaps,
+  and new Model-M keyboards.
 
 ## Original layout
+
 The original key layout reflects the keyboard's original purpose as an IBM terminal keyboard.
-Notice the position of the `Enter`, `Field Exit`, `Field +` keys.
 ![Original layout](https://github.com/scarpazza/battlecruiser/blob/main/M122-original-layout.png)
+Notice the position of the `Enter`, `Field Exit`, `Field +` keys.
+Notice the numeric keypad layout, and the lack of  `Print Screen`, `Num Lock`, `Scroll Lock` keys.
+
 
 ## Soarer's converter configuration
 
-Find my Soarer's adapter configuration in [m122-emacs.sc](https://github.com/scarpazza/battlecruiser/blob/main/m122-emacs.sc).
+My Soarer's adapter configuration is in [m122-emacs.sc](https://github.com/scarpazza/battlecruiser/blob/main/m122-emacs.sc).
 
-I'm remapping function keys F13-F24 and the *extra function keys* (i.e., the ten, pebble-colored keys to the left of the alphanumeric area, corresponding to `sctool`'s identifiers `EXTRA_F1`, `EXTRA_F2`, ... `EXTRA_F10`). I remap them mostly to sequences of two characters: the first a Control-Comma (`^,`), and the second either a digit or a letter.
+It remaps the function keys `F13`-`F24` and the *extra function keys* 
+(i.e., the ten, pebble-colored keys to the left of the alphanumeric area, corresponding to `sctool`'s identifiers `EXTRA_F1`, `EXTRA_F2`, ... `EXTRA_F10`). 
+
+I remap those keys mostly to sequences of two characters: the first being a Control-Comma (`^,`), and the second either a digit or a letter.
 
 I remap:
 * the first extra function key to the `Esc` key (without explicit remapping, Esc would be where NumLock is normally located in PC keyboards)
