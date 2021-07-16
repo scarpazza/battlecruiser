@@ -17,7 +17,7 @@ Soarer's converters are inexpensive and easily available on eBay and.
 I am posting: 
 * a Soarer's converter configuration file that remaps the keyboard to convenient keystroke sequences 
   ([m122-emacs.sc](https://github.com/scarpazza/battlecruiser/blob/main/m122-emacs.sc)) and
-* a `.emacs` startup file that binds those sequences to functions I find useful. 
+* emacs startup file that illustrates how to binds those sequences as desired. 
 
 The key mappings I chose are chosen precisely to (1) be easily re-bindable from emacs and (2) survive Microsoft's rdesktop.
 Specifically, recent versions of Microsoft Remote Desktop no longer relay function keys F13-F24 to the remote system.
@@ -74,19 +74,21 @@ Key:
   
 ## Emacs configuration
 
-Associate any extra function key we remapped via a command similar to the following:
+Please find a sample configuration file illustrating how to map my Control-comma sequences as desired [in my dot-emacs repository](https://github.com/scarpazza/dot-emacs/blob/main/.emacs.d/scarpaz-battlecruiser.el).
+
+In a nutshell, you can associate any extra function key via an elistp expression like9:
 
     (global-set-key (kbd "C-, 8") 'comment-region)
     
 This line binds emacs command `comment-region` to key EXTRA_F9 that we remapped to sequence `^,`,`8`.
 
 You can also bind Shift-modified keys to distinct emacs commands.
-
-For example, since we map Control+EXTRA_F9 to `comment-region`, it's reasonable to map Control+EXTRA_F9 to its reverse, `uncomment-region`.
+For example, after mapping Control+EXTRA_F9 to `comment-region`, it may make sense to map Control+EXTRA_F9 to its reverse, `uncomment-region`.
 
 Contrary to intuition, this is not possible via
-
-    (global-set-key (kbd "C-S-, 8") 'uncomment-region) ; WILL NOT WORK - DO NOT USE
+ 
+    ;; DO NOT USE - this expression is a counterexample and will not work!
+    (global-set-key (kbd "C-S-, 8") 'uncomment-region) 
     
 Rather, consider that our Soarer's macros won't clear the Shift modifier till after the first keystroke in the sequence.
 The Shift modifier remains active while the first key (`,`) is depressed, and the Shift-modified character corresponding to the `,` key is the `<` character.
@@ -94,11 +96,6 @@ Consequently, the keyboard sends a `^<`,`8` ("Control+less than" followed by the
 You can bind that sequence to `uncomment-region` via:
 
     (global-set-key (kbd "C-< 8") 'uncomment-region)  
-
-I also dissociate Control+Z from emacs's `suspend-frame` command, which is probably them most useless and annoying key bindings in the history of humanity.
-I associate it with `undo`. Now I have an Undo key that performs consistently in emacs and in the majority of Windows applications.
-
-    (global-set-key (kbd "C-z") 'undo)
     
     
 
