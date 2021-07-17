@@ -32,7 +32,7 @@ The key mappings I chose are chosen precisely to :
 
 New-old-stock, genuine IBM M122 keyboards seem no longer available and if they were, their price would probably be prohibitive.
 New M122-style keyboards are also available from Unicomp.
-Vintage, user IBM M122 keyboards are available at affordable prices, especially if untested or needing restoration otherwise.
+Vintage, used IBM M122 keyboards are available at affordable prices, especially if untested or needing restoration otherwise.
 
 
 I have worked so far on two M122 specimens: disassembling them, removing all the keycaps and key stems, washing the plastic shells, 
