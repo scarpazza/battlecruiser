@@ -15,7 +15,7 @@ While my choices are subjective and aim at primarily at satisfying a developer r
 ## Deliverables
 
 The M-122 keyboard (Part No. 1395660) uses an RJ45 connector and needs an adapter (Soarer's converter) to be used in contemporary PCs.
-Soarer's converters are inexpensive and easily available on eBay and.
+Soarer's converters are inexpensive and easily available on eBay.
 
 I am posting: 
 * a Soarer's converter configuration file that remaps the keyboard to convenient keystroke sequences 
