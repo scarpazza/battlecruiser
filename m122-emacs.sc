@@ -8,37 +8,46 @@
 # Decisions are discussed in README.md.
 
 remapblock
-  ESC        NUM_LOCK           # The top, leftmost key on the numpad originally outputs Esc. Make it a NumLock
-  EXTRA_F1   ESC
-  EXTRA_F10  LGUI
-  EUROPE_1   BACKSLASH          # Key on the inside of the L-shaped Enter key
+  PAD_PLUS    ENTER              # num keypad: "Field +" becomes Enter
+  NUM_LOCK    SLASH              # num keypad: traditional position of 
+  ESC         NUM_LOCK           # The top, leftmost key on the numpad originally outputs Esc. Make it a NumLock
+
+  EXTRA_F1    ESC
+  EXTRA_F10   LGUI
+  
+  EUROPE_1    BACKSLASH          # Key on the inside of the L-shaped Enter key
 
   # Configure the numeric pad mostly according to the traditional PC layout
   #
-  PAD_ASTERIX INTERNATIONAL_8   # Rightmost column, second row - reassign
-  PAD_MINUS   INTERNATIONAL_9   # Rightmost column, third row  - reassign
+  PAD_ASTERIX INTERNATIONAL_9   # Rightmost column, second row - reassign
+  PAD_MINUS   PAD_PLUS          # Rightmost column, third row  - reassign
   EXTRA_SYSRQ PAD_ASTERIX
   SCROLL_LOCK PAD_MINUS
-  NUM_LOCK    SLASH
-  PAD_PLUS    ENTER
-  # Note that I don't have SCROLL_LOCK. Don't need it. Don't want it.
+  
+  # I don't have SCROLL_LOCK. Don't need it. Don't want it.
 endblock
 
 
 macroblock
 
-  macro INTERNATIONAL_8   # Rightmost column, second row 
+  # Numpad - Rightmost column, second row. 
+  # Remap to "Control-comma 9"
+  # Memory aid: it's right next to num key 9.
+  macro INTERNATIONAL_9    
     PUSH_META SET_META LCTRL
     DELAY 5
     PRESS COMMA
     DELAY 5
     CLEAR_META all
     DELAY 5
-    PRESS Y
+    PRESS 9
     POP_ALL_META
   endmacro
 
-  macro INTERNATIONAL_9   # Rightmost column, third row 
+  # Key between LShift and Z, originally backslash.
+  # Remap to "Control-Comma Z".
+  # Memory aid: it's right next to Z.
+  macro EUROPE_2
     PUSH_META SET_META LCTRL
     DELAY 5
     PRESS COMMA
@@ -49,21 +58,9 @@ macroblock
     POP_ALL_META
   endmacro
 
-  # Key on the immediate right of LShift, originally backslash
-  # Remap to "Control-Comma X"
-  macro EUROPE_2
-    PUSH_META SET_META LCTRL
-    DELAY 5
-    PRESS COMMA
-    DELAY 5
-    CLEAR_META all
-    DELAY 5
-    PRESS 9
-    POP_ALL_META
-  endmacro
-
   # "Rule" key, in the middle of arrow keys.
-  # Remap to "Control-Comma 9"
+  # Remap to "Control-Comma 0".
+  # Memory aid: it's in the vicinity of the numpad 0 key.
   macro LANG_4
     PUSH_META SET_META LCTRL
     DELAY 5
@@ -71,7 +68,7 @@ macroblock
     DELAY 5
     CLEAR_META all
     DELAY 5
-    PRESS 9
+    PRESS 0
     POP_ALL_META
   endmacro
 
