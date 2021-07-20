@@ -8,10 +8,10 @@
 # Decisions are discussed in README.md.
 
 remapblock
-  ESC        EXTRA_F1
+  ESC        NUM_LOCK           # The top, leftmost key on the numpad originally outputs Esc. Make it a NumLock
   EXTRA_F1   ESC
   EXTRA_F10  LGUI
-  EUROPE_1   BACKSLASH  # Key on the inside of the L-shaped Enter key
+  EUROPE_1   BACKSLASH          # Key on the inside of the L-shaped Enter key
 
   # Configure the numeric pad mostly according to the traditional PC layout
   #
@@ -21,8 +21,7 @@ remapblock
   SCROLL_LOCK PAD_MINUS
   NUM_LOCK    SLASH
   PAD_PLUS    ENTER
-  # Note that I neither have NUM_LOCK nor SCROLL_LOCK.
-  # Don't need them. Don't want them.
+  # Note that I don't have SCROLL_LOCK. Don't need it. Don't want it.
 endblock
 
 
@@ -76,18 +75,6 @@ macroblock
     POP_ALL_META
   endmacro
 
-  # Original Esc key (at the position traditionally used for NumLock)
-  # Remap to "Control-Comma 0"
-  macro EXTRA_F1
-    PUSH_META SET_META LCTRL
-    DELAY 5
-    PRESS COMMA
-    DELAY 5
-    CLEAR_META all
-    DELAY 5
-    PRESS 0
-    POP_ALL_META    
-  endmacro
 endblock
 
 
