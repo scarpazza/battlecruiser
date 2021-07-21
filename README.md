@@ -129,7 +129,7 @@ Key:
 
 Please find a sample configuration file illustrating how to map my Control-comma sequences as desired [in my dot-emacs repository](https://github.com/scarpazza/dot-emacs/blob/main/.emacs.d/scarpaz-battlecruiser.el).
 
-In a nutshell, you can associate any extra function key via an elistp expression like9:
+In a nutshell, you can associate any extra function key via an elistp expression like:
 
     (global-set-key (kbd "C-, 8") 'comment-region)
     
