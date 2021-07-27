@@ -161,7 +161,7 @@ You can bind that sequence to `uncomment-region` via:
 ## Legal disclaimers
 
 This repository contains no code, only metadata and configuration files. 
-Artifacts contained in this repository were developed during personal time, not in conjunction with any form of employment or any employer, current or past.
-The author believes they are of no interest to his current employer.
+Artifacts contained in this repository were developed during personal time, not in connection with any form of employment or any employer, current or past.
+The author believes they are of no commercial interest to anybody, including his current employer.
 
 
