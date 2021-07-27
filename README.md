@@ -151,10 +151,17 @@ You can bind that sequence to `uncomment-region` via:
     (global-set-key (kbd "C-< 8") 'uncomment-region)  
     
     
-
 ## Other resources
 * [EasyHIDListen](https://github.com/adamhb123/EasyHIDListen)
 * [sctools](https://github.com/thentenaar/sctools)
 * [sctools prebuilt binaries](https://geekhack.org/index.php?topic=17458.0)
 * [Bitten's Model M Restoration Megaguide](https://photos.app.goo.gl/52yArEH55wRpg2aN6)
+
+
+## Legal disclaimers
+
+This repository contains no code, only metadata and configuration files. 
+Artifacts contained in this repository were developed during personal time, not in conjunction with any form of employment or any employer, current or past.
+The author believes they are of no interest to his current employer.
+
 
