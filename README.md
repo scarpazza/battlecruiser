@@ -64,7 +64,7 @@ Notice the position of the `Enter`, `Field Exit`, `Field +` keys.
 Notice the numeric keypad layout, and the lack of  `Print Screen`, `Num Lock`, `Scroll Lock` keys.
 
 
-## Soarer's converter programming
+## Key remapping discussion
 
 My Soarer's adapter configuration is in [m122-emacs.sc](https://github.com/scarpazza/battlecruiser/blob/main/m122-emacs.sc).
 
@@ -92,7 +92,17 @@ and preserve function if you intend to operate only on a local system.
 
 Additional considerations:
 
-* *Num keypad*: I reprogrammed the keys in the general numerical keypad to reflect the layout in
+* *Caps Lock*: there's an almost universal consensus that it is time to get rid of the Caps Lock key. 
+  It was created to solve a problem nobody has anymore. Now the key is just taking up precious space. 
+  People who are into keyboard construction frequently leave it out entirely and use its space for something else.
+  For us doing vintage restoration, the question opens what to remap Caps Lock to.
+  Many swap it with the `Ctrl` key. That doesn't work for me, because my left pinky is too used to finding Ctrl exactly where it is. 
+  In fact, the empty space between `Ctrl` and `Alt` on the Model M keyboard is particularly ergonomic hand-alignment reference point.
+  Others swap it with `Esc`. But `Esc` is already so close in my remap. 
+  I choose to remap it to `^, -` (the "Control-comma" minus sequence) which I later assign to the `delete-word` emacs command.
+  
+
+* *Numeric keypad*: I reprogrammed the keys in the general numerical keypad to reflect the layout in
   standard PCs, i.e., with the top row containing keys: `NumLock`, `/`, `*`, `-`.
   I reconfigured the tall 2x1 key to act as `Enter`. 
   Two key remains unmentioned: the keys on the rightmost column, second and third row.
