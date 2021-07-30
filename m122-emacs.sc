@@ -30,6 +30,19 @@ endblock
 
 macroblock
 
+  # CapsLock
+  # Remap to "Control-comma minus"
+  macro CAPS_LOCK
+    PUSH_META SET_META LCTRL
+    DELAY 5
+    PRESS COMMA
+    DELAY 5
+    CLEAR_META all
+    DELAY 5
+    PRESS MINUS
+    POP_ALL_META	
+  endmacro
+
   # Numpad - Rightmost column, second row. 
   # Remap to "Control-comma 9"
   # Memory aid: it's right next to num key 9.
