@@ -137,7 +137,10 @@ Key:
   
 ## Emacs configuration
 
-Please find a sample configuration file illustrating how to map my Control-comma sequences as desired [in my dot-emacs repository](https://github.com/scarpazza/dot-emacs/blob/main/.emacs.d/scarpaz-battlecruiser.el).
+Please find a sample configuration file illustrating how to bind Control-comma sequences to emacs commands as desired [in my dot-emacs repository](https://github.com/scarpazza/dot-emacs/blob/main/.emacs.d/scarpaz-battlecruiser.el).
+
+Those bindings are illustrated concisely in the picture:
+![emacs bindings](https://github.com/scarpazza/battlecruiser/blob/main/M122-emacs-bindings.png)
 
 In a nutshell, you can associate any extra function key via an elistp expression like:
 
@@ -159,6 +162,8 @@ Consequently, the keyboard sends a `^<`,`8` ("Control+less than" followed by the
 You can bind that sequence to `uncomment-region` via:
 
     (global-set-key (kbd "C-< 8") 'uncomment-region)  
+    
+    
     
     
 ## Other resources
