@@ -135,11 +135,11 @@ Key:
   
 
   
-## Emacs configuration
+## Emacs bindings
 
-Please find a sample configuration file illustrating how to bind Control-comma sequences to emacs commands as desired [in my dot-emacs repository](https://github.com/scarpazza/dot-emacs/blob/main/.emacs.d/scarpaz-battlecruiser.el).
+My [personal emacs binding configuration](https://github.com/scarpazza/dot-emacs/blob/main/.emacs.d/scarpaz-battlecruiser.el) illustrates practically how you can bind the Control-comma sequences just described to emacs commands as you desire.
 
-Those bindings are illustrated concisely in the picture:
+My bindings of choice are also illustrated for brevity in the picture:
 ![emacs bindings](https://github.com/scarpazza/battlecruiser/blob/main/M122-emacs-bindings.png)
 
 In a nutshell, you can associate any extra function key via an elistp expression like:
@@ -165,7 +165,6 @@ You can bind that sequence to `uncomment-region` via:
     
     
     
-    
 ## Other resources
 * [EasyHIDListen](https://github.com/adamhb123/EasyHIDListen)
 * [sctools](https://github.com/thentenaar/sctools)
@@ -177,6 +176,4 @@ You can bind that sequence to `uncomment-region` via:
 
 This repository contains no code, only metadata and configuration files. 
 Artifacts contained in this repository were developed during personal time, not in connection with any form of employment or any employer, current or past.
-The author believes they are of no commercial interest to anybody, including his current employer.
-
-
+I, the author, believe that all the contents in this repository are of no commercial interest to anybody, including my employers, current and past.
