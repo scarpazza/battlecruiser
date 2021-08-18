@@ -139,8 +139,13 @@ Key:
 
 My [personal emacs binding configuration](https://github.com/scarpazza/dot-emacs/blob/main/.emacs.d/scarpaz-battlecruiser.el) illustrates practically how you can bind the Control-comma sequences just described to emacs commands as you desire.
 
-My bindings of choice are also illustrated for brevity in the picture:
+This is work in progress and I only post it for illustrative purposes.
+
+My bindings are also pictured as follows:
 ![emacs bindings](https://github.com/scarpazza/battlecruiser/blob/main/M122-emacs-bindings.png)
+
+Keys shaded in blue are those I remapped.
+Keys in bright white are keys for which I haven't found a binding yet.
 
 In a nutshell, you can associate any extra function key via an elistp expression like:
 
