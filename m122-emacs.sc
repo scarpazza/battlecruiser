@@ -1,7 +1,7 @@
 # Daniele Paolo Scarpazza
-# 2021-07-07
-# Soarer's converter configuration file for IBM keyboard, Model M 122 Part Number 1395660
-# Originally shipped with the IBM InfoWindow II Terminal.
+#
+# Soarer's converter configuration file for IBM keyboard, Model M 122 Part Number 1395660,
+# originally shipped with the IBM InfoWindow II Terminal.
 #
 # Remaps the keyboard for easily bindable emacs sequences that survive across Microsoft Remote Desktop and X-Windows sessions.
 #
@@ -25,21 +25,18 @@ remapblock
   SCROLL_LOCK PAD_MINUS
   
   # I don't have SCROLL_LOCK. Don't need it. Don't want it.
+  
+  # I remap CAPS_LOCK (pressed alone) to PAUSE, a code I'll remap to the "Compose" function, both in Linux and Windows, separately
+  CAPS_LOCK PAUSE
 endblock
 
 
 macroblock
 
-  # CapsLock
-  # Remap to "Control-comma minus"
-  macro CAPS_LOCK
-    PUSH_META SET_META LCTRL
-    DELAY 5
-    PRESS COMMA
-    DELAY 5
-    CLEAR_META all
-    DELAY 5
-    PRESS MINUS
+  # Pressing the key labeled "Caps Lock" in conjuction with either Shift will produce the original Caps Lock function.
+  macro PAUSE SHIFT
+    PUSH_META CLEAR_META all
+    PRESS CAPS_LOCK
     POP_ALL_META	
   endmacro
 
@@ -57,7 +54,7 @@ macroblock
     POP_ALL_META
   endmacro
 
-  # Key between LShift and Z, originally backslash.
+  # Key located between LShift and Z, originally backslash.
   # Remap to "Control-Comma Z".
   # Memory aid: it's right next to Z.
   macro EUROPE_2
