@@ -99,7 +99,11 @@ Additional considerations:
   Many swap it with the `Ctrl` key. That doesn't work for me, because my left pinky is too used to finding Ctrl exactly where it is. 
   In fact, the empty space between `Ctrl` and `Alt` on the Model M keyboard is particularly ergonomic hand-alignment reference point.
   Others swap it with `Esc`. But `Esc` is already so close in my remap. 
-  I choose to remap it to `^, -` (the "Control-comma" minus sequence) which I later assign to the `delete-word` emacs command.
+  I choose to remap it to `Pause`, which I configure both in Windows and Linux to serve as a `Compose` key.
+  Relevant links:
+  - [WinCompose](https://github.com/samhocevar/wincompose)
+  - [How to define a Compose Key in Linux terminal](https://unix.stackexchange.com/questions/44453/how-to-define-a-compose-key-in-terminal-no-desktop-environment)
+  - [Remapping a key to Compose in Linux](https://unix.stackexchange.com/questions/195065/remapping-caps-lock-to-compose)
   
 
 * *Numeric keypad*: I reprogrammed the keys in the general numerical keypad to reflect the layout in
