@@ -151,7 +151,7 @@ My bindings are also pictured as follows:
 Keys shaded in blue are those I remapped.
 Keys in bright white are keys for which I haven't found a binding yet.
 
-In a nutshell, you can associate any extra function key via an elistp expression like:
+In a nutshell, you can associate any extra function key via an elisp expression like:
 
     (global-set-key (kbd "C-, 8") 'comment-region)
     
