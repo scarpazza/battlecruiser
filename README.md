@@ -163,7 +163,7 @@ For example, after mapping Control+EXTRA_F9 to `comment-region`, it may make sen
 Contrary to intuition, this is not possible via
  
     ;; DO NOT USE - this expression is a counterexample and will not work!
-    (global-set-key (kbd "C-S-, 8") 'uncomment-region) 
+    (global-set-key (kbd "C-s-, 8") 'uncomment-region) 
     
 Rather, consider that our Soarer's macros won't clear the Shift modifier till after the first keystroke in the sequence.
 The Shift modifier remains active while the first key (`,`) is depressed, and the Shift-modified character corresponding to the `,` key is the `<` character.
