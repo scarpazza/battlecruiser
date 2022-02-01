@@ -3,7 +3,7 @@
 ## Goal
 
 The goal of this project is repurposing vintage IBM M 122
-(a.k.a. "battlecruisers" and "battlships") keyboards for modern usage.
+(a.k.a. "battlecruisers" and "battleships") keyboards for modern usage.
 
 Specifically, I configure the extra keys to generate sequences: 
 * that are easy bindable to emacs functions without conflicting with existing default key bindings, and
@@ -18,8 +18,12 @@ needs.
 
 ## Deliverables
 
-The M122 keyboards come in multiple variants (more details in the next section), most of which employ connectors and protocols not supported by modern PCs. The most popular way to use these keyboards on contemporary PCs is via a USB adapter commonly known as Soarer's
-converter.  Soarer's converters are inexpensive and easily available on eBay.
+The M122 keyboards come in multiple variants, a few discussed in the next section, 
+which typically employ connectors and protocols not supported by modern PCs. 
+The most popular manner to use these keyboards on contemporary PCs is by making or buying 
+a USB adapter commonly known as *Soarer's converter*.  
+
+If you desire a ready-made solution, Soarer's converters are inexpensive and easily available on eBay.
 
 I am posting: 
 
@@ -28,11 +32,14 @@ I am posting:
 
 * [sample emacs startup configuration files](https://github.com/scarpazza/dot-emacs/blob/main/.emacs.d/scarpaz-battlecruiser.el) 
   that illustrate how to bind those sequences as desired. 
-
+  
 The key mappings I chose are chosen precisely to :
 1. be easily re-bindable from emacs and 
 2. survive Microsoft's rdesktop; 
    specifically, recent versions of Microsoft Remote Desktop no longer relay function keys F13-F24 to the remote system.
+
+Even if it has "emacs" in the name (and indeed I am a heavy emacs user), that configuration can be used more generally.
+
 
 
 ## Keyboard Variants
@@ -54,8 +61,10 @@ I have direct experience with three variants of the IBM Model M 122-key keyboard
   This keyboard can connect to a contemporary PC and does not support programming. 
   It is not covered in this page.
 
-Sharktastica's website has [an entire page dedicated to M122 variants](https://sharktastica.co.uk/topics/m122_diffs) and is, as usual,
-the definitive reference for all Model M information.
+The converter configuration I post works equally well on the Type II and Type III variant.
+
+To learn more on this topic, see Sharktastica's [page dedicated to M122 variants](https://sharktastica.co.uk/topics/m122_diffs).
+That website is always the definitive reference for all Model M information.
 
 
 ## Physical restoration
