@@ -1,4 +1,4 @@
-# emacs battlecruiser
+# Modern-day battleship and battlecruiser use
 
 ## Goal
 
