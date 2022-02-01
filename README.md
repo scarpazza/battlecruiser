@@ -144,6 +144,8 @@ Additional considerations:
   Two key remains unmentioned: the keys on the rightmost column, second and third row.
   On traditional PCs, their place is taken by one tall 2x1 `+` key.
   I choose to map the lower of those two keys to `+`, and the upper to a "Control-Comma 9" sequence.
+  In emacs, I use the upper key as a calendar key by binding `^, 9` to `calendar`,
+  and the same key shifted to a macro that inserts today's date.
 
 * I couldn't find any good reasons to preserve the `Scroll Lock` key, so I removed it.
   
