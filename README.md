@@ -3,7 +3,7 @@
 ## Goal
 
 The goal of this project is repurposing vintage IBM M 122
-(a.k.a. "battlecruiser") keyboards for modern usage.
+(a.k.a. "battlecruisers" and "battlships") keyboards for modern usage.
 
 Specifically, I configure the extra keys to generate sequences: 
 * that are easy bindable to emacs functions without conflicting with existing default key bindings, and
@@ -18,9 +18,8 @@ needs.
 
 ## Deliverables
 
-The M-122 keyboard (Part No. 1395660) uses an RJ45 connector and needs a USB adapter (Soarer's
-converter) to be used in contemporary PCs.  Soarer's converters are inexpensive and easily available
-on eBay.
+The M122 keyboards come in multiple variants (more details in the next section), most of which employ connectors and protocols not supported by modern PCs. The most popular way to use these keyboards on contemporary PCs is via a USB adapter commonly known as Soarer's
+converter.  Soarer's converters are inexpensive and easily available on eBay.
 
 I am posting: 
 
@@ -36,19 +35,43 @@ The key mappings I chose are chosen precisely to :
    specifically, recent versions of Microsoft Remote Desktop no longer relay function keys F13-F24 to the remote system.
 
 
+## Keyboard Variants
+I have direct experience with three variants of the IBM Model M 122-key keyboard:
+
+- the [Type II](https://sharktastica.co.uk/topics/m122_diffs#Type2), Part No. 1390572, 
+  - was originally shipped with the IBM 3196 terminals 
+  - is commonly referred to as "battleship", together with the earlier Type I,
+  - uses a 240-degree DIN plug,
+  - a Soarer's converter for it [can be found on eBay here](https://www.ebay.com/itm/282575692501);
+
+- the [Type III](https://sharktastica.co.uk/topics/m122_diffs#Type3), Part No. 1395660, 
+  - was originally shipped with the IBM InfoWindow terminal;  
+  - is commonly referred to as "battlecruiser" because it's lighter and smaller than its predecessor;
+  - uses an RJ45 connector and 
+  - a Soarer's converter for it [can be found on eBay here](https://www.ebay.com/itm/282933562080);
+
+- a "Type 4.5" original made by IBM and upgraded to USB by Unicomp.
+  This keyboard can connect to a contemporary PC and does not support programming. 
+  It is not covered in this page.
+
+Sharktastica's website has [an entire page dedicated to M122 variants](https://sharktastica.co.uk/topics/m122_diffs) and is, as usual,
+the definitive reference for all Model M information.
+
+
 ## Physical restoration
 
-New-old-stock, genuine IBM M122 keyboards seem no longer available and if they were, their price
-would probably be prohibitive.  New M122-style keyboards are also available from Unicomp.  Vintage,
-used IBM M122 keyboards are available at affordable prices, especially if untested or needing
+New-old-stock, genuine IBM M122 keyboards seem no longer available on the market. 
+If they were, their price would probably be prohibitive. 
+New M122-style keyboards also available from Unicomp.  
+Vintage, used IBM M122 keyboards are available at affordable prices, especially if untested or needing
 restoration otherwise.
 
-I have worked so far on two M122 specimens: disassembling them, removing all the keycaps and key
+I have worked so far on four M122 specimens: disassembling them, removing all the keycaps and key
 stems, washing the plastic shells, cleaning keycaps and keys in an ultrasonic cleaner, cleaning the
 board assembly by hand separately, replacing the rivets with fasteners and nuts (a.k.a., *bolt
 mod*).
 
-Photos of the restoration process are at https://imgur.com/a/aTVRmuB
+Some photos of the restoration process are at https://imgur.com/a/aTVRmuB
 
 To order keycaps and parts, you might use the following vendors:
 * [ClickyKeyboards](https://www.clickykeyboards.com/) carries original, vintage keycaps and
