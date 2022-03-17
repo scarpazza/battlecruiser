@@ -21,8 +21,8 @@ remapblock
   #
   PAD_ASTERIX INTERNATIONAL_9   # Rightmost column, second row - reassign
   PAD_MINUS   PAD_PLUS          # Rightmost column, third row  - reassign
-  EXTRA_SYSRQ PAD_ASTERIX
-  SCROLL_LOCK PAD_MINUS
+  EXTRA_SYSRQ PAD_MINUS
+  SCROLL_LOCK PAD_ASTERIX
   
   # I don't have SCROLL_LOCK. Don't need it. Don't want it.
   
