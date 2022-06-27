@@ -5,6 +5,8 @@
 The goal of this project is repurposing vintage IBM M 122
 (a.k.a. "battlecruisers" and "battleships") keyboards for modern usage.
 
+If you don't exactly know what M122 keyboards look like, I have [a ton of pretty pictures on my instagram account](https://www.instagram.com/ibm_scarpaz/).
+
 Specifically, I configure the extra keys to generate sequences: 
 * that are easy bindable to emacs functions without conflicting with existing default key bindings, and
 * survive across Microsoft Remote Desktop and an X-Windows connections (tested).
